@@ -18,8 +18,9 @@ class CrearTablaPermisoRol extends Migration
             $table->unsignedBigInteger('rol_id');
             $table->foreign('rol_id','fk_permisorol_rol')->references('id')->on('rol')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedBigInteger('permiso_id');
-            $table->foreign('permiso_id','fk_permisorol_usuario')->references('id')->on('permiso')->onDelete('restrict')->onUpdate('restrict');
-            $table->timestamps();
+            $table->foreign('permiso_id','fk_permisorol_permiso')->references('id')->on('permiso')->onDelete('restrict')->onUpdate('restrict');
+            $table->charset='utf8mb4';
+            $table->collaction = 'utf8mb4_spanish_ci';
         });
     }
 
